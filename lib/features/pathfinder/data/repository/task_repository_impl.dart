@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:dio/dio.dart';
 
 import 'package:webspark/core/resources/data_state.dart';
 import 'package:webspark/features/pathfinder/data/data_sources/task_api_service.dart';
