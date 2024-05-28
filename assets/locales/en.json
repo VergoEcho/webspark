@@ -1,8 +1,7 @@
 {
   "home_screen": {
-    "title": "Home Screen",
-    "url_label": "Set valid API base URL in order to continue",
-    "start_button": "Start counting process"
+    "title": "Home",
+    "start_button": "Start"
   },
   "process_screen": {
     "title": "Process Screen",

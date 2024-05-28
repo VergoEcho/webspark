@@ -21,5 +21,5 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<GetTasksUseCase>(GetTasksUseCase(sl()));
   sl.registerSingleton<SendResultsUseCase>(SendResultsUseCase(sl()));
 
-  sl.registerFactory<TaskCubit>(() => TaskCubit(sl(), sl()));
+  sl.registerFactory<TaskCubit>(() => TaskCubit());
 }

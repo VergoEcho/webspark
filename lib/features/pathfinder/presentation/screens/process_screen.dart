@@ -13,7 +13,6 @@ class ProcessScreen extends StatelessWidget {
   static const String route = '/process';
 
   _sendResults(BuildContext context) {
-    context.read<TaskCubit>().checkResults();
     Navigator.of(context).pushNamed(ResultsScreen.route);
   }
 

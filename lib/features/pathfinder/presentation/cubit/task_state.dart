@@ -1,46 +1,41 @@
 part of 'task_cubit.dart';
 
 abstract class TaskState extends Equatable {
-  final String url;
+  final TaskEntity? task;
   final String? error;
 
   const TaskState({
-    this.url = '',
+    this.task,
     this.error,
   });
 }
 
 class TaskInitial extends TaskState {
   @override
-  List<Object?> get props => [super.url, super.error];
+  List<Object?> get props => [super.task, super.error];
 }
 
 class TaskError extends TaskState {
   const TaskError({required super.error});
 
   @override
-  List<Object?> get props => [super.url, super.error];
+  List<Object?> get props => [super.task, super.error];
 }
 
 class TaskCorrectUrl extends TaskState {
-  const TaskCorrectUrl({required super.url});
+  const TaskCorrectUrl({required super.task});
 
   @override
-  List<Object?> get props => [super.url, super.error];
+  List<Object?> get props => [super.task, super.error];
 }
 
 class TaskCalcInProgress extends TaskState {
-  final double progress;
-  final List<TaskEntity> tasks;
-
-  const TaskCalcInProgress(
-    this.progress, {
-    required super.url,
-    required this.tasks,
+  const TaskCalcInProgress({
+    required super.task,
   });
 
   @override
-  List<Object?> get props => [progress, super.url, super.error, tasks];
+  List<Object?> get props => [super.task, super.error, ...super.task!.field];
 }
 
 class TaskCalcFinished extends TaskState {
@@ -49,10 +44,10 @@ class TaskCalcFinished extends TaskState {
 
   const TaskCalcFinished(
     this.results, {
-    required super.url,
+    required super.task,
     required this.tasks,
   });
 
   @override
-  List<Object?> get props => [results, super.url, super.error, tasks];
+  List<Object?> get props => [results, super.task, super.error, tasks];
 }

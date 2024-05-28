@@ -33,30 +33,32 @@ class PreviewScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          LocaleKeys.preview_screen_title.tr(),
-        ),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            for (int y = 0; y < fields.length; y++)
-              Row(
-                children: [
-                  for (int x = 0; x < fields[0].length; x++)
-                    Expanded(
+      // appBar: AppBar(
+      //   title: Text(
+      //     LocaleKeys.preview_screen_title.tr(),
+      //   ),
+      // ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          for (int y = 0; y < fields.length; y++)
+            Row(
+              children: [
+                for (int x = 0; x < fields[0].length; x++)
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(4),
                       child: Container(
-                        height: 120,
+                        height: 60,
                         color: getColor(x, y),
                         child: Center(child: Text('($x,$y)')),
                       ),
-                    )
-                ],
-              ),
-            Text(path),
-          ],
-        ),
+                    ),
+                  )
+              ],
+            ),
+          Text(path),
+        ],
       ),
     );
   }

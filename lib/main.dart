@@ -6,6 +6,7 @@ import 'package:webspark/features/pathfinder/presentation/screens/home_screen.da
 import 'package:webspark/features/pathfinder/presentation/screens/process_screen.dart';
 
 import 'config/theme.dart';
+import 'features/pathfinder/presentation/screens/input_ban_screen.dart';
 import 'features/pathfinder/presentation/screens/preview_screen.dart';
 import 'features/pathfinder/presentation/screens/results_screen.dart';
 import 'injection_container.dart';
@@ -43,6 +44,7 @@ class PathFinder extends StatelessWidget {
           theme: theme(),
           routes: {
             HomeScreen.route: (context) => const HomeScreen(),
+            InputBan.route: (context) => const InputBan(),
             PreviewScreen.route: (context) => const PreviewScreen(),
             ProcessScreen.route: (context) => const ProcessScreen(),
             ResultsScreen.route: (context) => const ResultsScreen(),
